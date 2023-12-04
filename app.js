@@ -17,10 +17,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
 
 var whitelist = [
-  "http://192.168.0.106:3000",
   "http://localhost:3000",
-  "http://185.77.96.55:8888",
-  "http://nuocthachdeerpang.maci.vn",
+  "http://namthanh-wedding.website/",
+  "https://namthanh-wedding.website/",
+  "https://wedding-fe-chi.vercel.app/",
 ];
 var corsOptions = {
   origin: function (origin, callback) {
@@ -33,8 +33,7 @@ var corsOptions = {
   methods: ["GET", "POST"],
 };
 
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
 
 // set up mongoose
 mongoose.set("strictQuery", true);
