@@ -6,12 +6,14 @@ import mongoose from "mongoose";
 import logger from "morgan";
 import mainRoutes from "./server/routes/main.js";
 import * as dotenv from "dotenv";
+import rateLimitMiddleware from "./server/middlewares/rateLimiter.js";
 
 // Dotenv config
 dotenv.config();
 
 // set up express app
 const app = express();
+app.use(rateLimitMiddleware);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
