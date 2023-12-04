@@ -14,7 +14,7 @@ export function createGreetings(req, res) {
       return res.status(201).json({
         success: true,
         message: "New greetings created successfully",
-        agency: newGreetings,
+        greetings: newGreetings,
       });
     })
     .catch((error) => {
@@ -33,7 +33,7 @@ export function getAllGreetings(req, res) {
       return res.status(200).json({
         success: true,
         message: "A list of all greetings",
-        agency: allGreetings,
+        greetings: allGreetings,
       });
     })
     .catch((err) => {
