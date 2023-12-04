@@ -33,7 +33,8 @@ var corsOptions = {
   methods: ["GET", "POST"],
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 
 // set up mongoose
 mongoose.set("strictQuery", true);

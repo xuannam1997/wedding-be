@@ -1,16 +1,10 @@
 import express from "express";
-import {
-  createAgency,
-  getAllAgency,
-  getSingleAgency,
-  deleteAgency,
-} from "../controllers/agency.js";
+
+import { createGreetings, getAllGreetings } from "../controllers/greetings.js";
 
 const router = express.Router();
 
-router.post("/agency", createAgency);
-router.get("/agency", getAllAgency);
-// router.get("/agency/:agencyId", getSingleAgency);
-// router.delete("/agency/:agencyId", deleteAgency);
+router.post("/greetings", createGreetings);
+router.get("/greetings", getAllGreetings);
 
 export default router;
