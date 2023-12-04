@@ -17,24 +17,25 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
 
-var whitelist = [
-  "http://localhost:3000",
-  "http://namthanh-wedding.website",
-  "https://namthanh-wedding.website",
-  "https://wedding-fe-eight.vercel.app",
-];
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST"],
-};
+// var whitelist = [
+//   "http://localhost:3000",
+//   "http://namthanh-wedding.website",
+//   "https://namthanh-wedding.website",
+//   "https://wedding-fe-eight.vercel.app",
+// ];
+// var corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+//   methods: ["GET", "POST"],
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(rateLimitMiddleware);
 
 // set up mongoose
