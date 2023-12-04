@@ -13,7 +13,6 @@ dotenv.config();
 
 // set up express app
 const app = express();
-app.use(rateLimitMiddleware);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger("dev"));
@@ -36,6 +35,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(rateLimitMiddleware);
 
 // set up mongoose
 mongoose.set("strictQuery", true);
