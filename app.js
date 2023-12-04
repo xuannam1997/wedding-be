@@ -19,9 +19,9 @@ app.use(logger("dev"));
 
 var whitelist = [
   "http://localhost:3000",
-  "http://namthanh-wedding.website/",
-  "https://namthanh-wedding.website/",
-  "https://wedding-fe-chi.vercel.app/",
+  "http://namthanh-wedding.website",
+  "https://namthanh-wedding.website",
+  "https://wedding-fe-chi.vercel.app",
 ];
 var corsOptions = {
   origin: function (origin, callback) {
